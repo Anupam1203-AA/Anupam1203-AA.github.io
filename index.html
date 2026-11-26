@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anupam Anubhav | Generative AI Engineer</title>
+<meta name="description" content="Anupam Anubhav, Generative AI Engineer at TCS, builds LLM-powered applications, AI agents, voice agents and RAG systems.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0d12; --panel:#12151d; --line:#222838; --text:#e7e9ee; --muted:#9aa3b5;
+    --accent:#7cf2c9; --accent2:#8b9cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+  .logo{font-weight:700;font-size:1.1rem}
+  .logo span{color:var(--accent)}
+  nav ul{display:flex;gap:28px;list-style:none;font-size:.92rem;color:var(--muted)}
+  nav ul a:hover{color:var(--accent)}
+
+  header{padding:110px 0 90px;position:relative;overflow:hidden}
+  header::before{content:"";position:absolute;inset:-40% -10% auto auto;width:620px;height:620px;
+    background:radial-gradient(circle,rgba(124,242,201,.14),transparent 65%);pointer-events:none}
+  .tag{color:var(--accent);font-size:.85rem;margin-bottom:18px}
+  h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.08;letter-spacing:-.02em;margin-bottom:22px}
+  h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:1.15rem;color:var(--muted);max-width:620px;margin-bottom:36px}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{padding:12px 22px;border-radius:8px;font-weight:500;font-size:.95rem;border:1px solid var(--line);transition:.2s}
+  .btn.primary{background:var(--accent);color:#06110d;border-color:var(--accent)}
+  .btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+
+  section{padding:80px 0;border-top:1px solid var(--line)}
+  .label{color:var(--accent);font-size:.8rem;margin-bottom:10px}
+  h2{font-size:2rem;letter-spacing:-.01em;margin-bottom:34px}
+
+  .about p{color:var(--muted);max-width:720px;font-size:1.05rem}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:36px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .stat b{display:block;font-size:2rem;color:var(--accent)}
+  .stat span{color:var(--muted);font-size:.9rem}
+
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;transition:.25s}
+  .card:hover{border-color:var(--accent);transform:translateY(-4px)}
+  .card .kind{font-size:.75rem;color:var(--accent2);margin-bottom:10px}
+  .card h3{font-size:1.25rem;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+  .result{font-size:.9rem;color:var(--accent);margin-bottom:16px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+  .chip{font-size:.75rem;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+  .links{display:flex;gap:16px;margin-top:18px;font-size:.88rem}
+  .links a{color:var(--accent)}
+  .links a:hover{text-decoration:underline}
+
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .skill h4{font-size:.95rem;margin-bottom:12px}
+
+  .timeline{border-left:1px solid var(--line);padding-left:28px}
+  .job{position:relative;margin-bottom:38px}
+  .job::before{content:"";position:absolute;left:-34px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--accent)}
+  .job .when{font-size:.8rem;color:var(--muted)}
+  .job h3{font-size:1.15rem;margin:4px 0 8px}
+  .job h3 span{color:var(--muted);font-weight:400}
+  .job ul{color:var(--muted);padding-left:18px;font-size:.95rem}
+
+  .contact{text-align:center}
+  .contact p{color:var(--muted);margin:0 auto 30px;max-width:520px}
+  .contact .btns{justify-content:center}
+  footer{padding:30px 0;text-align:center;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}
+
+  @media(max-width:700px){nav ul{display:none} header{padding:70px 0 60px}}
+  .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .cert{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-size:.93rem}
+  .cert small{display:block;color:var(--muted);font-size:.8rem}
+  .ach{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:22px}
+  .ach .cert b{color:var(--accent)}
+  .sub{color:var(--muted);margin:-20px 0 30px;font-size:.95rem}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">anupam<span>.ai</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="tag mono">// Generative AI Engineer · TCS · Bangalore</div>
+    <h1>Hi, I'm Anupam.<br>I build <em>AI agents</em> that do real work.</h1>
+    <p class="lead">I design and ship LLM-powered applications, from IT support agents and real-time voice agents to RAG assistants and AI-driven cloud governance, using Python, FastAPI, LangChain and LangGraph.</p>
+    <div class="btns">
+      <a href="#work" class="btn primary">See my work</a>
+      <a href="resume.pdf" class="btn" target="_blank">Download resume</a>
+      <a href="https://github.com/Anupam1203-AA" class="btn" target="_blank">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="label mono">01 / about</div>
+    <h2>About me</h2>
+    <p>I'm a Generative AI Engineer at Tata Consultancy Services, where I build LLM-powered applications and intelligent agents. I have solo-built three AI solutions end to end and presented them to clients and TCS leadership: a Google Workspace-integrated IT support agent, a real-time voice agent on Google Cloud, and a cloud governance platform with an LLM risk layer. I work across RAG, vector search, multimodal AI (text, image and voice) and secure, governed enterprise AI deployments.</p>
+    <div class="stats">
+      <div class="stat"><b>3</b><span>AI solutions solo-built and presented to clients</span></div>
+      <div class="stat"><b>99%</b><span>accuracy in my published deep learning research</span></div>
+      <div class="stat"><b>Runner-up</b><span>AI Fridays, TCS GenAI solution contest</span></div>
+      <div class="stat"><b>100+</b><span>security vulnerabilities fixed automatically by my AI agent</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="label mono">02 / at tcs</div>
+    <h2>What I've built at work</h2>
+    <p class="sub">Systems Engineer, Tata Consultancy Services · Feb 2026 to present. These are client solutions, so the code isn't public.</p>
+    <div class="projects">
+
+      <div class="card">
+        <div class="kind mono">AGENTIC AI · IT AUTOMATION</div>
+        <h3>AI IT Support Automation Agent</h3>
+        <p>An agentic assistant that monitors devices through Nexthink, auto-remediates issues using SOPs and past tickets, and talks to users in Google Chat. It routes requests by intent, and when a request is sensitive or out of scope it escalates to an engineer with a Jira or ServiceNow ticket that already holds the full context.</p>
+        <div class="result">▲ Eliminated manual ticket creation and sped up incident response</div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">LLMs</span><span class="chip">Nexthink</span><span class="chip">Google Workspace APIs</span><span class="chip">Jira / ServiceNow</span></div>
+      </div>
+
+      <div class="card">
+        <div class="kind mono">VOICE AI · GOOGLE CLOUD</div>
+        <h3>AI Voice Agent for Automotive Leads</h3>
+        <p>A real-time voice agent that calls a lead right after they submit a form. It qualifies the lead, answers questions about cars, pricing and availability, books test drives, and live-transfers the call to a dealer along with a saved call summary.</p>
+        <div class="result">▲ Low-latency, real-time streamed conversation</div>
+        <div class="chips"><span class="chip">Dialogflow CX</span><span class="chip">Gemini</span><span class="chip">Speech-to-Text / TTS</span><span class="chip">Twilio</span><span class="chip">FastAPI</span></div>
+      </div>
+
+      <div class="card">
+        <div class="kind mono">AI GOVERNANCE · FINOPS · AUTONOMOUS AGENT</div>
+        <h3>Azure AI Observability & Governance Platform</h3>
+        <p>A platform that gives the company one view of its Azure AI usage: cost, token consumption, prompt tracking, alerts and policy compliance. An autonomous agent enforces company policy on its own. It automatically stops AI usage once a budget limit is reached, which cut unaccounted AI spend by 30–40%, and it fixes non-compliant resources and security misconfigurations without manual work. An LLM layer explains each risk in plain language.</p>
+        <div class="result">▲ Cut unaccounted AI spend by 30–40% · auto-remediated 100+ security vulnerabilities</div>
+        <div class="chips"><span class="chip">AI Agents</span><span class="chip">FastAPI</span><span class="chip">Azure OpenAI</span><span class="chip">Azure Monitor</span><span class="chip">Azure Policy</span><span class="chip">Defender for Cloud</span><span class="chip">Resource Graph</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="label mono">03 / projects</div>
+    <h2>Projects & research</h2>
+    <div class="projects">
+
+      <div class="card">
+        <div class="kind mono">GENAI · RAG · LANGGRAPH</div>
+        <h3>Trade Compliance Monitoring Assistant</h3>
+        <p>A GenAI assistant that screens trade records against rule-based checks, classifies regulatory risk, extracts evidence and retrieves the relevant policies using RAG. A multi-step LangGraph workflow handles risk explanation and analyst review, and the assistant generates the PDF report automatically.</p>
+        <div class="chips"><span class="chip">LangGraph</span><span class="chip">RAG</span><span class="chip">FastAPI</span><span class="chip">Vector Search</span></div>
+      </div>
+
+      <div class="card">
+        <div class="kind mono">RAG · GUARDRAILS</div>
+        <h3>Banking AI Chatbot</h3>
+        <p>A RAG-based banking assistant for customer queries, policy Q&A, transaction lookups and complaints. Its safety guardrails block sensitive requests such as sharing a PIN, CVV or password, and unauthorized fund transfers.</p>
+        <div class="chips"><span class="chip">RAG</span><span class="chip">FastAPI</span><span class="chip">Guardrails</span><span class="chip">NLP</span></div>
+      </div>
+
+      <div class="card">
+        <div class="kind mono">DEEP LEARNING · PUBLISHED RESEARCH</div>
+        <h3>Potato Disease Classification</h3>
+        <p>A transfer-learning classifier built on InceptionV3 that recognizes seven potato disease classes from leaf images taken in uncontrolled, real-world conditions. The work was published as a research paper.</p>
+        <div class="result">▲ 99% classification accuracy</div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">TensorFlow / Keras</span><span class="chip">InceptionV3</span><span class="chip">Transfer Learning</span></div>
+        <div class="links"><a href="https://github.com/Anupam1203-AA/Potato-Disease-Classification-in-an-Uncontrolled-Environment" target="_blank">GitHub →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="kind mono">DATA ANALYTICS</div>
+        <h3>Credit Card Financial Dashboard</h3>
+        <p>An interactive Power BI dashboard that tracks credit card transactions, revenue and customer trends for quick business insight.</p>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">DAX</span></div>
+        <div class="links"><a href="https://github.com/Anupam1203-AA/Credit_Card_Financial_Dashboard" target="_blank">GitHub →</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="label mono">04 / skills</div>
+    <h2>Toolkit</h2>
+    <div class="skills">
+      <div class="skill"><h4>GenAI & LLMs</h4><div class="chips"><span class="chip">LLMs</span><span class="chip">Gemini</span><span class="chip">RAG</span><span class="chip">AI Agents</span><span class="chip">Agent Orchestration</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">Prompt Engineering</span><span class="chip">Multimodal AI</span><span class="chip">Hugging Face</span><span class="chip">Guardrails</span></div></div>
+      <div class="skill"><h4>Languages & Backend</h4><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">FastAPI</span><span class="chip">Flask</span><span class="chip">REST APIs</span><span class="chip">Webhooks</span></div></div>
+      <div class="skill"><h4>Cloud & DevOps</h4><div class="chips"><span class="chip">Google Cloud</span><span class="chip">Dialogflow CX</span><span class="chip">Azure AI</span><span class="chip">Azure OpenAI</span><span class="chip">Azure Monitor</span><span class="chip">Azure Policy</span><span class="chip">Docker</span></div></div>
+      <div class="skill"><h4>ML, Data & Tools</h4><div class="chips"><span class="chip">Deep Learning</span><span class="chip">NLP</span><span class="chip">Transfer Learning</span><span class="chip">FAISS</span><span class="chip">ChromaDB</span><span class="chip">Twilio</span><span class="chip">Jira</span><span class="chip">ServiceNow</span><span class="chip">Power BI</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <div class="label mono">05 / credentials</div>
+    <h2>Education & certifications</h2>
+    <div class="certs">
+      <div class="cert">B.Tech, Computer Science Engineering<small>Kalinga Institute of Industrial Technology · 2021–2025 · CGPA 8.77/10</small></div>
+      <div class="cert">Azure AI Apps and Agents Developer Associate (AI-103)<small>Microsoft Certified</small></div>
+      <div class="cert">Azure AI Fundamentals (AI-900)<small>Microsoft Certified</small></div>
+      <div class="cert">Claude Certified Developer – Foundations<small>Anthropic</small></div>
+      <div class="cert">Machine Learning Specialization<small>DeepLearning.AI</small></div>
+      <div class="cert">Python for Data Science, AI & Development<small>IBM</small></div>
+      <div class="cert">Google Data Analytics Certificate<small>Google</small></div>
+    </div>
+    <div class="ach">
+      <div class="cert"><b>🏆 Runner-up</b> · AI Fridays, the TCS AI/GenAI solution contest</div>
+      <div class="cert"><b>📄 Published research</b> · Potato leaf disease classification with deep learning (99% accuracy)</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="label mono">06 / contact</div>
+    <h2>Let's build something</h2>
+    <p>I'm open to roles and projects in Generative AI, AI agents and automation. I'm based in Bangalore and speak English, Hindi and Odia.</p>
+    <div class="btns">
+      <a href="mailto:anupamanubhav50@gmail.com" class="btn primary">anupamanubhav50@gmail.com</a>
+      <a href="https://github.com/Anupam1203-AA" class="btn" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" class="btn" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="mono">© 2026 Anupam Anubhav · Hosted on GitHub Pages</footer>
+
+</body>
+</html>
